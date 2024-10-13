@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".AvaliacaoFisicaActivity">
+
+    <TextView
+        android:id="@+id/textView_dados_praticante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ESCALA DE LYSHOLM"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/textView_mancar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MANCAR (5 PONTOS)"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/textView_dados_praticante"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_mancar_nunca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nunca (5 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/textView_mancar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_mancar_leve_periodicamente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Leve ou periodicamente (3 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_mancar_nunca"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_apoio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="APOIO (5 PONTOS)"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_mancar_leve_periodicamente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_apoio_nenhum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nenhum (5 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/textView_apoio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_apoio_bengala_muleta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bengala ou muleta (2 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_apoio_nenhum"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_apoio_impossivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Impossível ( 0 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_apoio_bengala_muleta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_travamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TRAVAMENTO (15 PONTOS)"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_apoio_impossivel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_travamento_nenhum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nenhum travamento ou sensação de travamento ( 15 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/textView_travamento"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_travamento_sensacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tem sensação, mas sem travamento (10 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_travamento_nenhum"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_travamento_ocasional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Travamento ocasional (6 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_travamento_sensacao"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_travamento_frequente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frequente (2 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_travamento_ocasional"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_travamento_travada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Articulação travada no exame (0 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_travamento_frequente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_instabilidade_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INSTABILIDADE (25 PONTOS)"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_travamento_travada"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_instabilidade_nunca_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nunca falseia (25 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/textView_instabilidade_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_instabilidade_raramente_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Raramente durante atividades atléticas ou exercícios pesados (20 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_instabilidade_nunca_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_instabilidade_frequentemente_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frequentemente durante atividades atléticas ou exercícios pesados (incapaz de participação) (15 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_instabilidade_raramente_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_instabilidade_ocacionalmente_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ocasionalmente em atividades diárias (10 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_instabilidade_frequentemente_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_instabilidade_frequentemente_diarias_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frequentemente em atividades diárias (5 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_instabilidade_ocacionalmente_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_instabilidade_cada_passo_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Em cada passo (0 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_instabilidade_frequentemente_diarias_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_dor_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DOR (25 PONTOS)"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_instabilidade_cada_passo_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_dor_nenhuma_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nenhuma (25 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/textView_dor_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_dor_inconstante_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inconstante ou leve durante exercícios pesados (20 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_dor_nenhuma_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_dor_marcada_exercicios_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marcada durante exercícios pesados (15 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_dor_inconstante_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_dor_apos_caminhar_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marcada durante ou após mais de caminhar 2km (10 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_dor_marcada_exercicios_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_dor_menor_distancia_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marcada durante ou após caminhar 2km ou menor distância (5 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_dor_apos_caminhar_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_dor_constante_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Constante (0 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_dor_menor_distancia_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_inchaco_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INCHAÇO OU EDEMA (10 PONTOS)"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_dor_constante_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_inchaco_nenhum_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nenhum (10 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/textView_inchaco_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_inchaco_exercicios_pesados_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Com exercícios pesados (6 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_inchaco_nenhum_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_inchaco_exercicios_comuns_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Com exercícios comuns (2 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_inchaco_exercicios_pesados_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_inchaco_constante_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Constante (0 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_inchaco_exercicios_comuns_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_subindo_escadas_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUBINDO ESCADAS (10 PONTOS)"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_inchaco_constante_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_escadas_nenhum_problema_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nenhum problema (10 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/textView_subindo_escadas_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_escadas_levemente_prejudicado_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Levemente prejudicado (6 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_escadas_nenhum_problema_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_escadas_um_degrau_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Um degrau de cada vez (2 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_escadas_levemente_prejudicado_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_escadas_impossivel_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Impossível (0 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_escadas_um_degrau_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_agachamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AGACHAMENTO (5 PONTOS)"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_escadas_impossivel_paciente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_agachamento_nenhum_problema"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nenhum problema (5 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/textView_agachamento"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_agachamento_levemente_prejudicado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Levemente prejudicado ( 4 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_agachamento_nenhum_problema"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_agachamento_menos_90_graus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Não além de 90 graus ( 2 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_agachamento_levemente_prejudicado"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_agachamento_impossivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Impossível (0 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_agachamento_menos_90_graus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_quadro_pontuacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QUADRO DE PONTUAÇÃO"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_agachamento_impossivel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_quadro_pontuacao_excelente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Excelente (95 a 100 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/textView_quadro_pontuacao"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_quadro_pontuacao_bom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bom (84 a 94 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_quadro_pontuacao_excelente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_quadro_pontuacao_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regular (65 a 83 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_quadro_pontuacao_bom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_quadro_pontuacao_ruim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ruim (inferior a 64 pontos)"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_quadro_pontuacao_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_avaliacao_fisica_especifica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AVALIAÇÃO FÍSICA ESPECÍFICA LLCA"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_quadro_pontuacao_ruim"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/textView_temp_palpacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEMPERATURA À PALPAÇÃO"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/textView_avaliacao_fisica_especifica"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_temp_palpacao_joelho_contralateral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IGUAL AO JOELHO CONTRALATERAL"
+            app:layout_constraintTop_toBottomOf="@id/textView_temp_palpacao"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_temp_palpacao_joelho_hipotermia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HIPOTERMIA EM RELAÇÃO AO JOELHO CONTRALATERAL"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_temp_palpacao_joelho_contralateral"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_temp_palpacao_joelho_hipertermia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HIPERTERMIA EM RELAÇÃO AO JOELHO CONTRALATERAL"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_temp_palpacao_joelho_hipotermia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_perimetria_quadriceps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PERIMETRIA MUSCULAR - QUADRICEPS *"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_temp_palpacao_joelho_hipertermia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editText_perimetria_quadriceps_proximal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="MEDIDA PROXIMAL (em cm)"
+            app:layout_constraintTop_toBottomOf="@id/textView_perimetria_quadriceps"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editText_perimetria_quadriceps_medial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="MEDIDA MEDIAL (em cm)"
+            app:layout_constraintTop_toBottomOf="@id/editText_perimetria_quadriceps_proximal"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editText_perimetria_quadriceps_distal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="MEDIDA DISTAL (em cm)"
+            app:layout_constraintTop_toBottomOf="@id/editText_perimetria_quadriceps_medial"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textView_perimetria_triceps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PERIMETRIA MUSCULAR - TRÍCEPS SURAL *"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/editText_perimetria_quadriceps_distal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editText_perimetria_triceps_proximal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="MEDIDA PROXIMAL (em cm)"
+            app:layout_constraintTop_toBottomOf="@id/textView_perimetria_triceps"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editText_perimetria_triceps_medial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="MEDIDA MEDIAL (em cm)"
+            app:layout_constraintTop_toBottomOf="@id/editText_perimetria_triceps_proximal"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editText_perimetria_triceps_distal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="MEDIDA DISTAL (em cm)"
+            app:layout_constraintTop_toBottomOf="@id/editText_perimetria_triceps_medial"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textView_goniometria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AVALIAÇÃO ADM JOELHO (GONIOMETRIA)"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/editText_perimetria_triceps_distal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_goniometria_flexao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FLEXAO"
+            app:layout_constraintTop_toBottomOf="@id/textView_goniometria"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_goniometria_extensao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXTENSAO"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_goniometria_flexao"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_gaveta_joelho_direito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TESTE DE GAVETA - JOELHO DIREITO"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_goniometria_extensao"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_gaveta_joelho_direito_positivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POSITIVO"
+            app:layout_constraintTop_toBottomOf="@id/textView_gaveta_joelho_direito"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_gaveta_joelho_direito_negativo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEGATIVO"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_gaveta_joelho_direito_positivo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView_gaveta_joelho_esquerdo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TESTE DE GAVETA - JOELHO ESQUERDO"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_gaveta_joelho_direito_negativo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_gaveta_joelho_esquerdo_positivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POSITIVO"
+            app:layout_constraintTop_toBottomOf="@id/textView_gaveta_joelho_esquerdo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_gaveta_joelho_esquerdo_negativo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEGATIVO"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_gaveta_joelho_esquerdo_positivo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+
+    <TextView
+        android:id="@+id/textView_avaliacao_fisica_global"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AVALIAÇÃO FÍSICA GLOBAL"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_gaveta_joelho_esquerdo_negativo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+
+    <TextView
+        android:id="@+id/textView_flexiteste_paciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FLEXITESTE (ARAUJO, 2004; ARAUJO, 2013)"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/textView_avaliacao_fisica_global"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento1_dorsiflexao_tornozelo_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 1: Dorsiflexão de tornozelo (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/textView_flexiteste_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento2_flexao_plantar_tornozelo_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 2: Flexão plantar de tornozelo (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento1_dorsiflexao_tornozelo_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento3_flexao_joelho_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 3: Flexão de joelho (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento2_flexao_plantar_tornozelo_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento4_extensao_joelho_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 4: Extensão de joelho (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento3_flexao_joelho_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento5_flexao_quadril_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 5: Flexão de quadril (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento4_extensao_joelho_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento6_extensao_quadril_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 6: Extensão de quadril (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento5_flexao_quadril_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento7_aducao_quadril_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 7: Adução de quadril (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento6_extensao_quadril_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento8_abducao_quadril_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 8: Abdução de quadril (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento7_aducao_quadril_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento9_flexao_tronco_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 9: Flexão do tronco (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento8_abducao_quadril_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento10_extensao_tronco_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 10: Extensão do tronco (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento9_flexao_tronco_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento11_flexao_lateral_tronco_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 11: Flexão lateral do tronco (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento10_extensao_tronco_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento12_flexao_punho_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 12: Flexão de punho (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento11_flexao_lateral_tronco_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento13_extensao_punho_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 13: Extensão de punho (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento12_flexao_punho_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento14_flexao_cotovelo_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 14: Flexão de cotovelo (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento13_extensao_punho_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento15_extensao_cotovelo_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 15: Extensão de cotovelo (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento14_flexao_cotovelo_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento16_aducao_posterior_ombro_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 16: Adução posterior do ombro (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento15_extensao_cotovelo_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento17_extensao_ad_posterior_ombro_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 17: Extensão + adução posterior (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento16_aducao_posterior_ombro_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento18_extensao_posterior_ombro_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 18: Extensão posterior do ombro (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento17_extensao_ad_posterior_ombro_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento19_rotacao_lateral_ombro_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 19: Rotação lateral do ombro (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento18_extensao_posterior_ombro_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editText_movimento20_rotacao_medial_ombro_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Movimento 20: Rotação medial do ombro (0-4)"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento19_rotacao_lateral_ombro_paciente"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/button_salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        app:layout_constraintTop_toBottomOf="@id/editText_movimento20_rotacao_medial_ombro_paciente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
