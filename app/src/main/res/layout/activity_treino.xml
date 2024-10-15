@@ -1,14 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".TreinoActivity">
+
     <TextView
+        android:id="@+id/textViewCirurgicoCasaPreTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Treino"
+        android:text="TRATAMENTO CIRÚRGICO EM CASA - Pré Operatório"
+        android:textStyle="bold"
+        android:textSize="20sp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCirurgicoCasaPreLink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Flexão de joelho em pé"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewCirurgicoCasaPreTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCirurgicoCasaPreLink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Deslizamento dos Pés no Chão"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewCirurgicoCasaPreLink1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Seção TRATAMENTO CIRÚRGICO EM CASA - Pós Cirúrgico -->
+    <TextView
+        android:id="@+id/textViewCirurgicoCasaPosTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRATAMENTO CIRÚRGICO EM CASA - Pós Cirúrgico"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewCirurgicoCasaPreLink2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCirurgicoCasaPosLink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Afundo pliométrico"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewCirurgicoCasaPosTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCirurgicoCasaPosLink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Agachamento Unilateral"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewCirurgicoCasaPosLink1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Seção TRATAMENTO CIRÚRGICO NA ACADEMIA - Pré Operatório -->
+    <TextView
+        android:id="@+id/textViewCirurgicoAcademiaPreTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRATAMENTO CIRÚRGICO NA ACADEMIA - Pré Operatório"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewCirurgicoCasaPosLink2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCirurgicoAcademiaPreLink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Elevação de Pernas com Caneleira"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewCirurgicoAcademiaPreTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCirurgicoAcademiaPreLink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Elevação de Quadril com Abdução"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewCirurgicoAcademiaPreLink1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <!-- Continue adicionando as seções TRATAMENTO CONSERVADOR EM CASA - Pré e Pós Operatório -->
+    <!-- Seção TRATAMENTO CONSERVADOR EM CASA - Pré Operatório -->
+    <TextView
+        android:id="@+id/textViewConservadorCasaPreTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRATAMENTO CIRÚRGICO NA ACADEMIA - Pós Cirúrgico"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewCirurgicoAcademiaPreLink2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewConservadorCasaPreLink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Agachamento com Salto no Jump"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorCasaPreTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewConservadorCasaPreLink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Leg Press 45 graus - Pés Afastados"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorCasaPreLink1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Seção TRATAMENTO CONSERVADOR EM CASA - Pós Cirúrgico -->
+    <TextView
+        android:id="@+id/textViewConservadorCasaPosTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRATAMENTO CONSERVADOR EM CASA - Fase Subaguda"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorCasaPreLink2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewConservadorCasaPosLink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Extensão de Pernas com Pés Apoiados"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorCasaPosTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewConservadorCasaPosLink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Flexão de Joelho Deitado"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorCasaPosLink1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!-- Seção TRATAMENTO CONSERVADOR EM CASA - Fase Crônica -->
+    <TextView
+        android:id="@+id/textViewConservadorCasaFaseCronicaTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRATAMENTO CONSERVADOR EM CASA - Fase Crônica"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorCasaPosLink2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewConservadorCasaFaseCronicaLink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Elevação de Quadril Unilateral"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorCasaFaseCronicaTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewConservadorCasaFaseCronicaLink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Prancha Isométrica Baixa com Abdução de Quadril"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorCasaFaseCronicaLink1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Seção TRATAMENTO CONSERVADOR NA ACADEMIA - Fase Aguda -->
+    <TextView
+        android:id="@+id/textViewConservadorAcademiaFaseAgudaTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRATAMENTO CONSERVADOR NA ACADEMIA - Fase Aguda"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorCasaFaseCronicaLink2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewConservadorAcademiaFaseAgudaLink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Adução de quadril unilateral deitado com caneleira"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorAcademiaFaseAgudaTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewConservadorAcademiaFaseAgudaLink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Abdução sentado com miniband"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorAcademiaFaseAgudaLink1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Seção TRATAMENTO CONSERVADOR NA ACADEMIA - Fase Crônica -->
+    <TextView
+        android:id="@+id/textViewConservadorAcademiaFaseCronicaTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRATAMENTO CONSERVADOR NA ACADEMIA - Fase Crônica"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorAcademiaFaseAgudaLink2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewConservadorAcademiaFaseCronicaLink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Abdução de Quadril Unilateral na Polia Baixa"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorAcademiaFaseCronicaTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewConservadorAcademiaFaseCronicaLink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Agachamento no Bozu"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewConservadorAcademiaFaseCronicaLink1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
